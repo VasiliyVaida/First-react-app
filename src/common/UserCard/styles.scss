@@ -1,0 +1,9 @@
+@import '../../styles/constants.scss';
+
+.card-wrapper {
+  margin: 1em;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 3px solid $black;
+}
