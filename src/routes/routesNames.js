@@ -3,4 +3,5 @@ export const ROUTES = {
   COUNTER_PAGE: '/counter',
   HOOK_COUNTER: '/hooks',
   LISTS_PAGE: '/lists',
+  USERS_PAGE: '/users',
 };
