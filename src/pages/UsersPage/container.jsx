@@ -9,6 +9,11 @@ export const UserPageContainer = () => {
     stateCopy.splice(index, 1);
     setUsers(stateCopy);
   };
+  const handleUsersSort = () => {
+    const stateCopy = [...users];
+    const sortedUsers = stateCopy.sort((a, b) => b.age - a.age);
+    setUsers(sortedUsers);
+  };
   useEffect(() => {
     setUsers([
       { name: 'Alex', age: 27, phone: '+3752993847474', avatar: 'http://archilab.online/images/1/123.jpg' },
@@ -19,5 +24,5 @@ export const UserPageContainer = () => {
       { name: 'Alexa', age: 23, phone: '+3752974756674', avatar: 'https://www.blast.hk/attachments/64805/' },
     ]);
   }, []);
-  return <UsersPage users={users} handleUserRemove={handleUserRemove} />
+  return <UsersPage users={users} handleUserRemove={handleUserRemove} handleUsersSort={handleUsersSort} />
 };
