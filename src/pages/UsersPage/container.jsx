@@ -1,12 +1,18 @@
-import { useEffect, useState } from "react";
-import { UsersPage } from ".";
-
+import { useEffect, useState } from 'react';
+import { UsersPage } from '.';
 
 export const UserPageContainer = () => {
   const [users, setUsers] = useState([]);
-  const handleUserRemove = (index) => {
+  // const handleUserRemove = (index) => {
+  //   const stateCopy = [...users];
+  //   stateCopy.splice(index, 1);
+  //   setUsers(stateCopy);
+  // };
+  const handleUserActive = (item, index) => {
     const stateCopy = [...users];
-    stateCopy.splice(index, 1);
+    stateCopy.forEach((item, index) => {
+      item.classList.add('card-wrapper__active');
+    });
     setUsers(stateCopy);
   };
   const handleUsersSort = () => {
@@ -24,5 +30,5 @@ export const UserPageContainer = () => {
       { name: 'Alexa', age: 23, phone: '+3752974756674', avatar: 'https://www.blast.hk/attachments/64805/' },
     ]);
   }, []);
-  return <UsersPage users={users} handleUserRemove={handleUserRemove} handleUsersSort={handleUsersSort} />
+  return <UsersPage users={users} handleUserActive={handleUserActive} handleUsersSort={handleUsersSort} />;
 };
