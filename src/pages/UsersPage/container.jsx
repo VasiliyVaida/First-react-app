@@ -8,11 +8,9 @@ export const UserPageContainer = () => {
   //   stateCopy.splice(index, 1);
   //   setUsers(stateCopy);
   // };
-  const handleUserActive = (item, index) => {
+  const handleUserActive = (item) => {
     const stateCopy = [...users];
-    stateCopy.forEach((item, index) => {
-      item.classList.add('card-wrapper__active');
-    });
+    stateCopy.find((user) => item.name === user.name).active = true;
     setUsers(stateCopy);
   };
   const handleUsersSort = () => {
